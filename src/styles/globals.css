@@ -240,7 +240,7 @@ body {
   display: none;
 }
 
-/* Light theme navbar adjustments */
+/* Light theme navbar */
 .theme-light .navbar {
   background-color: rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -258,7 +258,7 @@ body {
   color: #1f2937;
 }
 
-/* Light theme text adjustments */
+/* Light theme text */
 .theme-light .theme-switcher-container {
   background: rgba(255, 255, 255, 0.3);
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -298,7 +298,6 @@ body {
   border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
-/* Light theme main text adjustments */
 .theme-light main {
   color: #1f2937;
 }

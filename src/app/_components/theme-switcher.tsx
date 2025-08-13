@@ -51,15 +51,15 @@ export function ThemeSwitcher() {
 
   const handleMouseMove = (e: MouseEvent) => {
     if (isDragging && containerRef.current) {
-      const newX = e.clientX - dragOffset.x;
-      const newY = e.clientY - dragOffset.y;
-      
       const maxX = window.innerWidth - (containerRef.current.offsetWidth || 200);
       const maxY = window.innerHeight - (containerRef.current.offsetHeight || 300);
       
+      const newX = Math.min(e.clientX - dragOffset.x, maxX);
+      const newY = Math.min(e.clientY - dragOffset.y, maxY);
+      
       setPosition({
-        x: Math.max(0, Math.min(newX, maxX)),
-        y: Math.max(0, Math.min(newY, maxY)),
+        x: newX > 0 ? newX : 0,
+        y: newY > 0 ? newY : 0,
       });
     }
   };
