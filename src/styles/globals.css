@@ -4,3 +4,192 @@
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+/* Theme Variables */
+:root {
+  /* Current Theme (Purple) */
+  --theme-current-primary: #2e026d;
+  --theme-current-secondary: #15162c;
+  
+  /* Darker Purple Theme */
+  --theme-dark-primary: #1a0b2e;
+  --theme-dark-secondary: #0d0519;
+  
+  /* Dark Blue Theme */
+  --theme-blue-primary: #0f172a;
+  --theme-blue-secondary: #020617;
+  
+  /* Dark Gray Theme */
+  --theme-gray-primary: #1f2937;
+  --theme-gray-secondary: #111827;
+  
+  /* Dark Green Theme */
+  --theme-green-primary: #064e3b;
+  --theme-green-secondary: #022c22;
+}
+
+/* Apply Current Theme by Default */
+body {
+  background: linear-gradient(to bottom, var(--theme-current-primary), var(--theme-current-secondary));
+  min-height: 100vh;
+  transition: background 0.3s ease;
+}
+
+/* Theme Classes */
+.theme-current {
+  background: linear-gradient(to bottom, var(--theme-current-primary), var(--theme-current-secondary));
+}
+
+.theme-dark {
+  background: linear-gradient(to bottom, var(--theme-dark-primary), var(--theme-dark-secondary));
+}
+
+.theme-blue {
+  background: linear-gradient(to bottom, var(--theme-blue-primary), var(--theme-blue-secondary));
+}
+
+.theme-gray {
+  background: linear-gradient(to bottom, var(--theme-gray-primary), var(--theme-gray-secondary));
+}
+
+.theme-green {
+  background: linear-gradient(to bottom, var(--theme-green-primary), var(--theme-green-secondary));
+}
+
+/* Theme Switcher Styles */
+.theme-switcher {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 40;
+}
+
+.theme-switcher-container {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 200px;
+}
+
+.theme-switcher-title {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.theme-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.theme-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.theme-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.theme-button-active {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.theme-button-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.theme-button-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-link {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-link:hover {
+  color: white;
+}
+
+.navbar-link-icon {
+  font-size: 1.25rem;
+  transition: transform 0.2s ease;
+}
+
+.navbar-link:hover .navbar-link-icon {
+  transform: scale(1.1);
+}
+
+.navbar-link-text {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .navbar-link-text {
+    display: inline;
+  }
+}
