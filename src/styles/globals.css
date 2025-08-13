@@ -4,3 +4,306 @@
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+/* Theme Variables */
+:root {
+  --theme-original-primary: #2e026d;
+  --theme-original-secondary: #15162c;
+  
+  --theme-dark-primary: #1a0b2e;
+  --theme-dark-secondary: #0d0519;
+  
+  --theme-light-primary: #f8fafc;
+  --theme-light-secondary: #e2e8f0;
+  
+  --theme-sunset-primary: #dc2626;
+  --theme-sunset-secondary: #7c2d12;
+  
+  --theme-ocean-primary: #0ea5e9;
+  --theme-ocean-secondary: #0369a1;
+  
+  --theme-forest-primary: #16a34a;
+  --theme-forest-secondary: #15803d;
+  
+  --theme-midnight-primary: #0f0f23;
+  --theme-midnight-secondary: #1a1a2e;
+}
+
+/* Default Theme */
+body {
+  background: linear-gradient(to bottom, var(--theme-original-primary), var(--theme-original-secondary));
+  min-height: 100vh;
+  transition: background 0.3s ease;
+}
+
+/* Themes */
+
+.theme-original {
+  background: linear-gradient(to bottom, var(--theme-original-primary), var(--theme-original-secondary));
+}
+
+.theme-dark {
+  background: linear-gradient(to bottom, var(--theme-dark-primary), var(--theme-dark-secondary));
+}
+
+.theme-light {
+  background: linear-gradient(to bottom, var(--theme-light-primary), var(--theme-light-secondary));
+}
+
+.theme-sunset {
+  background: linear-gradient(135deg, var(--theme-sunset-primary), var(--theme-sunset-secondary));
+}
+
+.theme-ocean {
+  background: linear-gradient(135deg, var(--theme-ocean-primary), var(--theme-ocean-secondary));
+}
+
+.theme-forest {
+  background: linear-gradient(135deg, var(--theme-forest-primary), var(--theme-forest-secondary));
+}
+
+.theme-midnight {
+  background: linear-gradient(135deg, var(--theme-midnight-primary), var(--theme-midnight-secondary));
+}
+
+/* Theme Switcher */
+.theme-switcher {
+  z-index: 40;
+  user-select: none;
+}
+
+.theme-switcher-container {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  min-width: 200px;
+  overflow: hidden;
+}
+
+.theme-switcher-header {
+  cursor: grab;
+  padding: 0;
+}
+
+.theme-switcher-header:active {
+  cursor: grabbing;
+}
+
+.theme-switcher-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s ease;
+}
+
+.theme-switcher-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-switcher-icon {
+  font-size: 18px;
+  color: #fbbf24;
+}
+
+.theme-switcher-current {
+  font-size: 14px;
+  font-weight: 600;
+  flex: 1;
+  text-align: left;
+}
+
+.theme-switcher-chevron {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.theme-switcher-chevron.rotate {
+  transform: rotate(180deg);
+}
+
+.theme-switcher-dropdown {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.theme-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.theme-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.theme-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.theme-button-active {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.theme-button-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.theme-button-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-link {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-link:hover {
+  color: white;
+}
+
+.navbar-link-icon {
+  font-size: 1.25rem;
+  transition: transform 0.2s ease;
+}
+
+.navbar-link:hover .navbar-link-icon {
+  transform: scale(1.1);
+}
+
+.navbar-link-text {
+  display: none;
+}
+
+/* Light theme navbar */
+.theme-light .navbar {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.theme-light .navbar-brand {
+  color: #1f2937;
+}
+
+.theme-light .navbar-link {
+  color: rgba(31, 41, 55, 0.8);
+}
+
+.theme-light .navbar-link:hover {
+  color: #1f2937;
+}
+
+/* Light theme text */
+.theme-light .theme-switcher-container {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.theme-light .theme-switcher-toggle {
+  color: #1f2937;
+}
+
+.theme-light .theme-switcher-toggle:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.theme-light .theme-switcher-dropdown {
+  background: rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.theme-light .theme-button {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #1f2937;
+}
+
+.theme-light .theme-button:hover {
+  background: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.theme-light .theme-button-active {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.theme-light .theme-button-color {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.theme-light main {
+  color: #1f2937;
+}
+
+@media (min-width: 640px) {
+  .navbar-link-text {
+    display: inline;
+  }
+}
