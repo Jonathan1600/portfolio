@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react";
 
-type Theme = "current" | "dark" | "blue" | "gray" | "green" | "light" | "sunset" | "ocean" | "forest" | "midnight";
+type Theme = "original" | "dark" | "light" | "sunset" | "ocean" | "forest" | "midnight";
 
 const themes: { id: Theme; name: string; primary: string }[] = [
-  { id: "current", name: "Purple", primary: "#2e026d" },
+  { id: "original", name: "Purple (Original)", primary: "#2e026d" },
   { id: "dark", name: "Dark Purple", primary: "#1a0b2e" },
   { id: "light", name: "Light", primary: "#f8fafc" },
   { id: "sunset", name: "Sunset", primary: "#dc2626" },
@@ -15,27 +15,25 @@ const themes: { id: Theme; name: string; primary: string }[] = [
 ];
 
 export function ThemeSwitcher() {
-  const [currentTheme, setCurrentTheme] = useState<Theme>("current");
+  const [currentTheme, setCurrentTheme] = useState<Theme>("original");
 
   const changeTheme = (theme: Theme) => {
-    // Remove all theme classes
-    document.body.classList.remove("theme-current", "theme-dark", "theme-light", "theme-sunset", "theme-ocean", "theme-forest", "theme-midnight");
-    
-    // Add new theme class
-    if (theme !== "current") {
+    document.body.classList.remove("theme-original", "theme-dark", "theme-light", "theme-sunset", "theme-ocean", "theme-forest", "theme-midnight");
+
+    if (theme !== "original") {
       document.body.classList.add(`theme-${theme}`);
     }
     
     setCurrentTheme(theme);
     
-    // Store theme preference in localStorage
+    // Storing theme to local storage
     localStorage.setItem("preferred-theme", theme);
   };
 
   useEffect(() => {
-    // Load saved theme preference on component mount
+    // Load theme from local storage
     const savedTheme = localStorage.getItem("preferred-theme") as Theme;
-    if (savedTheme && savedTheme !== "current") {
+    if (savedTheme && savedTheme !== "original") {
       changeTheme(savedTheme);
     }
   }, []);

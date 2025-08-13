@@ -137,6 +137,122 @@ body {
   font-weight: 500;
 }
 
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-link {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-link:hover {
+  color: white;
+}
+
+.navbar-link-icon {
+  font-size: 1.25rem;
+  transition: transform 0.2s ease;
+}
+
+.navbar-link:hover .navbar-link-icon {
+  transform: scale(1.1);
+}
+
+.navbar-link-text {
+  display: none;
+}
+
+/* Light theme navbar adjustments */
+.theme-light .navbar {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.theme-light .navbar-brand {
+  color: #1f2937;
+}
+
+.theme-light .navbar-link {
+  color: rgba(31, 41, 55, 0.8);
+}
+
+.theme-light .navbar-link:hover {
+  color: #1f2937;
+}
+
+/* Light theme text adjustments */
+.theme-light .theme-switcher-container {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.theme-light .theme-switcher-title {
+  color: #1f2937;
+}
+
+.theme-light .theme-button {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #1f2937;
+}
+
+.theme-light .theme-button:hover {
+  background: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.theme-light .theme-button-active {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.theme-light .theme-button-color {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+/* Light theme main text adjustments */
+.theme-light main {
+  color: #1f2937;
+}
+
 @media (min-width: 640px) {
   .navbar-link-text {
     display: inline;
