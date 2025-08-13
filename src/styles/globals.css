@@ -7,56 +7,66 @@
 
 /* Theme Variables */
 :root {
-  /* Current Theme (Purple) */
-  --theme-current-primary: #2e026d;
-  --theme-current-secondary: #15162c;
+  --theme-original-primary: #2e026d;
+  --theme-original-secondary: #15162c;
   
-  /* Darker Purple Theme */
   --theme-dark-primary: #1a0b2e;
   --theme-dark-secondary: #0d0519;
   
-  /* Dark Blue Theme */
-  --theme-blue-primary: #0f172a;
-  --theme-blue-secondary: #020617;
+  --theme-light-primary: #f8fafc;
+  --theme-light-secondary: #e2e8f0;
   
-  /* Dark Gray Theme */
-  --theme-gray-primary: #1f2937;
-  --theme-gray-secondary: #111827;
+  --theme-sunset-primary: #dc2626;
+  --theme-sunset-secondary: #7c2d12;
   
-  /* Dark Green Theme */
-  --theme-green-primary: #064e3b;
-  --theme-green-secondary: #022c22;
+  --theme-ocean-primary: #0ea5e9;
+  --theme-ocean-secondary: #0369a1;
+  
+  --theme-forest-primary: #16a34a;
+  --theme-forest-secondary: #15803d;
+  
+  --theme-midnight-primary: #0f0f23;
+  --theme-midnight-secondary: #1a1a2e;
 }
 
-/* Apply Current Theme by Default */
+/* Default Theme */
 body {
-  background: linear-gradient(to bottom, var(--theme-current-primary), var(--theme-current-secondary));
+  background: linear-gradient(to bottom, var(--theme-original-primary), var(--theme-original-secondary));
   min-height: 100vh;
   transition: background 0.3s ease;
 }
 
-/* Theme Classes */
-.theme-current {
-  background: linear-gradient(to bottom, var(--theme-current-primary), var(--theme-current-secondary));
+/* Themes */
+
+.theme-original {
+  background: linear-gradient(to bottom, var(--theme-original-primary), var(--theme-original-secondary));
 }
 
 .theme-dark {
   background: linear-gradient(to bottom, var(--theme-dark-primary), var(--theme-dark-secondary));
 }
 
-.theme-blue {
-  background: linear-gradient(to bottom, var(--theme-blue-primary), var(--theme-blue-secondary));
+.theme-light {
+  background: linear-gradient(to bottom, var(--theme-light-primary), var(--theme-light-secondary));
 }
 
-.theme-gray {
-  background: linear-gradient(to bottom, var(--theme-gray-primary), var(--theme-gray-secondary));
+.theme-sunset {
+  background: linear-gradient(135deg, var(--theme-sunset-primary), var(--theme-sunset-secondary));
 }
 
-.theme-green {
-  background: linear-gradient(to bottom, var(--theme-green-primary), var(--theme-green-secondary));
+.theme-ocean {
+  background: linear-gradient(135deg, var(--theme-ocean-primary), var(--theme-ocean-secondary));
 }
 
-/* Theme Switcher Styles */
+.theme-forest {
+  background: linear-gradient(135deg, var(--theme-forest-primary), var(--theme-forest-secondary));
+}
+
+.theme-midnight {
+  background: linear-gradient(135deg, var(--theme-midnight-primary), var(--theme-midnight-secondary));
+}
+
+/* Theme Switcher */
 .theme-switcher {
   position: fixed;
   top: 100px;
@@ -125,67 +135,6 @@ body {
 .theme-button-text {
   font-size: 14px;
   font-weight: 500;
-}
-
-/* Navbar Styles */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.navbar-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.navbar-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar-brand {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: white;
-}
-
-.navbar-links {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.navbar-link {
-  color: rgba(255, 255, 255, 0.8);
-  transition: color 0.2s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.navbar-link:hover {
-  color: white;
-}
-
-.navbar-link-icon {
-  font-size: 1.25rem;
-  transition: transform 0.2s ease;
-}
-
-.navbar-link:hover .navbar-link-icon {
-  transform: scale(1.1);
-}
-
-.navbar-link-text {
-  display: none;
 }
 
 @media (min-width: 640px) {

@@ -2,14 +2,16 @@
 
 import { useState, useEffect } from "react";
 
-type Theme = "current" | "dark" | "blue" | "gray" | "green";
+type Theme = "current" | "dark" | "blue" | "gray" | "green" | "light" | "sunset" | "ocean" | "forest" | "midnight";
 
 const themes: { id: Theme; name: string; primary: string }[] = [
   { id: "current", name: "Purple", primary: "#2e026d" },
   { id: "dark", name: "Dark Purple", primary: "#1a0b2e" },
-  { id: "blue", name: "Dark Blue", primary: "#0f172a" },
-  { id: "gray", name: "Dark Gray", primary: "#1f2937" },
-  { id: "green", name: "Dark Green", primary: "#064e3b" },
+  { id: "light", name: "Light", primary: "#f8fafc" },
+  { id: "sunset", name: "Sunset", primary: "#dc2626" },
+  { id: "ocean", name: "Ocean", primary: "#0ea5e9" },
+  { id: "forest", name: "Forest", primary: "#16a34a" },
+  { id: "midnight", name: "Midnight", primary: "#0f0f23" },
 ];
 
 export function ThemeSwitcher() {
@@ -17,7 +19,7 @@ export function ThemeSwitcher() {
 
   const changeTheme = (theme: Theme) => {
     // Remove all theme classes
-    document.body.classList.remove("theme-current", "theme-dark", "theme-blue", "theme-gray", "theme-green");
+    document.body.classList.remove("theme-current", "theme-dark", "theme-light", "theme-sunset", "theme-ocean", "theme-forest", "theme-midnight");
     
     // Add new theme class
     if (theme !== "current") {
