@@ -68,10 +68,8 @@ body {
 
 /* Theme Switcher */
 .theme-switcher {
-  position: fixed;
-  top: 100px;
-  right: 20px;
   z-index: 40;
+  user-select: none;
 }
 
 .theme-switcher-container {
@@ -79,18 +77,61 @@ body {
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  padding: 16px;
   min-width: 200px;
+  overflow: hidden;
 }
 
-.theme-switcher-title {
+.theme-switcher-header {
+  cursor: grab;
+  padding: 0;
+}
+
+.theme-switcher-header:active {
+  cursor: grabbing;
+}
+
+.theme-switcher-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: transparent;
+  border: none;
   color: white;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s ease;
+}
+
+.theme-switcher-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-switcher-icon {
+  font-size: 18px;
+  color: #fbbf24;
+}
+
+.theme-switcher-current {
   font-size: 14px;
   font-weight: 600;
-  margin: 0 0 12px 0;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  flex: 1;
+  text-align: left;
+}
+
+.theme-switcher-chevron {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.theme-switcher-chevron.rotate {
+  transform: rotate(180deg);
+}
+
+.theme-switcher-dropdown {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .theme-buttons {
@@ -223,8 +264,17 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.theme-light .theme-switcher-title {
+.theme-light .theme-switcher-toggle {
   color: #1f2937;
+}
+
+.theme-light .theme-switcher-toggle:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.theme-light .theme-switcher-dropdown {
+  background: rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .theme-light .theme-button {
